@@ -2,6 +2,63 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 0 16px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px 0 48px 0;
+}
+
+.navbar .left {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.navbar .right {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .right a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .right a:hover {
+  text-decoration: underline;
+}
+
+.navbar .right img {
+  width: 24px;
+  height: 24px;
+}
+
+.navbar .bar {
+  background-color: black;
+  height: 4px;
+  width: 36px;
+  margin: 3px;
+  border-radius: 10px;
+}
+
+.navbar .hamburger {
+  height: 50px;
+  width: 50px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
 .project-grid {
   display: grid;
   grid-template-areas:
@@ -14,8 +71,6 @@ body {
     "foam foam dimensional";
   gap: 16px;
   width: 100%;
-  max-width: 90%;
-  margin: auto;
 }
 
 #eth {
@@ -74,7 +129,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(15, 15, 15, 0.5);
   font-size: 36px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -82,13 +137,32 @@ body {
   transition: all 0.2s ease;
 }
 
+.project .overlay {
+  font-size: 24px;
+}
+
 .project .overlay:hover {
   opacity: 1;
   cursor: pointer;
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  padding: 64px;
 }
 
 @media only screen and (max-width: 1100px) {
+  .navbar .left {
+    font-size: 24px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
   .project-grid {
+    max-width: 100%;
     grid-template-areas:
       "eth eth"
       "alphabet traveler"
@@ -96,12 +170,43 @@ body {
       "insta insta"
       "cup foam"
       "dimensional dimensional";
-
-    max-width: 100%;
   }
 }
 
 @media only screen and (max-width: 768px) {
+  .footer {
+    padding: 32px 16px;
+    font-size: 14px;
+  }
+
+  .navbar {
+    padding: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: white;
+    width: 100%;
+    padding: 16px 24px;
+    box-sizing: border-box;
+  }
+
+  .navbar .right {
+    display: none;
+  }
+
+  .navbar .left {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .project-grid {
     grid-template-areas:
       "eth eth"
@@ -112,5 +217,7 @@ body {
       "cup cup"
       "foam foam"
       "dimensional dimensional";
+
+    margin-top: 100px;
   }
 }
